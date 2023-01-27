@@ -10,10 +10,15 @@ public class StatsLibraryTester {
 		//creating an instance of StatsLibrary
 		StatsLibrary test = new StatsLibrary();
 		
-		System.out.println("The mean of this array is equal to: " + test.findMean(arr));
-		System.out.println("The median of this array is equal to: " + test.findMedian(arr));
-		System.out.println("The mode of this array is equal to: " + test.findMode(arr));
-		System.out.println("The standard deviation of this array is equal to: " + test.findStandardDeviation(arr));
+		System.out.println("----------------------------------------------");
+		System.out.println("|  Mean                |  " + test.findMean(arr) + " |");
+		System.out.println("----------------------------------------------");
+		System.out.println("|  Median              |  " + test.findMedian(arr) + "                |");
+		System.out.println("----------------------------------------------");
+		System.out.println("|  Mode                |  " + test.findMode(arr) + "                |");
+		System.out.println("----------------------------------------------");
+		System.out.println("|  Standard Deviation  |  " + test.findStandardDeviation(arr) + " |");
+		System.out.println("-----------------------------------------------");
 
 		
 		
