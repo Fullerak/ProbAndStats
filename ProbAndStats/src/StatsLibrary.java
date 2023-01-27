@@ -78,21 +78,21 @@ public class StatsLibrary {
 	
 	//method to find the standard deviation
 	public double findStandardDeviation(double[] array) {
-		
+		//creating an instance of the class so i can use mean instead of doing a new one in here
 		StatsLibrary test = new StatsLibrary();
-		
+		//getting the mean
 		double mean = test.findMean(array);
 		
 		double sum = 0;
-		
+		//subtracting the mean from each number, squaring it, then adding it to sum
 		for (double i : array) {
 			double x = i - mean;
 			double y = x*x;
 			sum += y;
 		}
-		
+		//dividing sum by the count -1
 		double z = sum/(array.length);
-		
+		//sqrt it to get the standard deviation
 		double standardDeviation = Math.sqrt(z);
 		
 		return standardDeviation;
@@ -131,16 +131,16 @@ public class StatsLibrary {
 	public ArrayList<Integer> findIntersection(ArrayList<Integer> arrayOne, ArrayList<Integer> arrayTwo){
 		//have to either do a double for loop
 		//maybe check an element in one and compare it to all the other ones
-		ArrayList<Integer> complimentFinal = new ArrayList<Integer>();
+		ArrayList<Integer> intersectionFinal = new ArrayList<Integer>();
 		
 		//going through the list and checking if it is present, if so then add it
 		for(int x : arrayOne) {
 			if(arrayTwo.contains(x)) {
-				complimentFinal.add(x);
+				intersectionFinal.add(x);
 			}
 		}
 		
-		return complimentFinal;
+		return intersectionFinal;
 		
 	}
 		
