@@ -3,7 +3,6 @@ import java.util.Arrays;
 
 //software design pattern (iterator is one of them)
 public class StatsLibrary {
-	//idk why i made this i hope i use it later	
 	
 	
 	//Default constructor
@@ -34,9 +33,9 @@ public class StatsLibrary {
 		//after we sort it then we can add an if else statement to check if its even or odd
 		
 		//middle of the array {1, 2, 3, 4, 5}
-		double middle = (array.length / 2);
+		double middle = array[(array.length / 2)];
 		//the other middle {1, 2, 3, 4}
-		double otherMiddle = (array.length / 2) - 1;
+		double otherMiddle = array[(array.length / 2) - 1];
 		
 		//checking if it is even
 		if(array.length % 2 == 0){
@@ -97,6 +96,7 @@ public class StatsLibrary {
 		
 		return standardDeviation;
 	}
+	
 	
 	//method to find the union of two arraylists
 	//essentially combines both sets and eliminates duplicates
