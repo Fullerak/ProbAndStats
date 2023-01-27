@@ -48,7 +48,7 @@ public class StatsLibrary {
 		}
 		
 	}
-	
+
 	//method to get the mode
 	public double findMode(double[] array) {
 		//to find the mode we just need to find the number or item that occurs the most
@@ -56,21 +56,21 @@ public class StatsLibrary {
 		//and the other one is the amount of times it occurs, and im going to compare it
 		//to the next item # and if the count is less ill keep it if its more ill swap it
 		//https://www.tutorialspoint.com/Java-program-to-calculate-mode-in-Java
-	      int maxValue = 0, maxCount = 0, i, j;
-	      int n = array.length;
+	    double maxValue = 0, maxCount = 0, i, j;
+	    double n = array.length;
 	      
-	      for (i = 0; i < n; ++i) {
-	         int count = 0;
-	         for (j = 0; j < n; ++j) {
-	            if (array[j] == array[i])
-	            ++count;
-	         }
+	    	for (i = 0; i < n; ++i) {
+	    		int count = 0;
+	    		for (j = 0; j < n; ++j) {
+	    			if (array[(int) j] == array[(int) i])
+	    				++count;
+	    		}
 
-	         if (count > maxCount) {
-	            maxCount = count;
-	            maxValue = (int) array[i];
-	         }
-	      }
+	    		if (count > maxCount) {
+	    			maxCount = count;
+	    			maxValue = array[(int) i];
+	    		}
+	    	}
 	      return maxValue;
 		
 	}
