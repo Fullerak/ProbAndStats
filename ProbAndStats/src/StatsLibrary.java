@@ -126,8 +126,9 @@ public class StatsLibrary {
 		
 	}
 	
+	//method to find the intersection of two sets
+	//essentially only if the item appears in both sets we can add it to the final set
 	public ArrayList<Integer> findIntersection(ArrayList<Integer> arrayOne, ArrayList<Integer> arrayTwo){
-		
 		//have to either do a double for loop
 		//maybe check an element in one and compare it to all the other ones
 		ArrayList<Integer> complimentFinal = new ArrayList<Integer>();
