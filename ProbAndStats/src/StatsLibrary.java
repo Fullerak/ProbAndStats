@@ -56,6 +56,8 @@ public class StatsLibrary {
 		//and the other one is the amount of times it occurs, and im going to compare it
 		//to the next item # and if the count is less ill keep it if its more ill swap it
 		//https://www.tutorialspoint.com/Java-program-to-calculate-mode-in-Java
+		//return type to Double not double and then do an if else loop to check if theres 2 maxvalues
+		//putting this here for later to be able to set a parameter to null
 	    double maxValue = 0, maxCount = 0, i, j;
 	    double n = array.length;
 	      
