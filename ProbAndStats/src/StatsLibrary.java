@@ -50,7 +50,7 @@ public class StatsLibrary {
 	}
 
 	//method to get the mode
-	public double findMode(double[] array) {
+	public Double findMode(double[] array) {
 		//to find the mode we just need to find the number or item that occurs the most
 		//what im thinking is having two variables, one that is essentially the # itself
 		//and the other one is the amount of times it occurs, and im going to compare it
