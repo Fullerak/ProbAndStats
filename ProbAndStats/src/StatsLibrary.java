@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -168,7 +169,17 @@ public class StatsLibrary {
 		return complementArr;
 	}
 	
-	
-	
+	public BigInteger factorial(int num) {
+		
+		BigInteger init = new BigInteger("1");
+		
+		for (int i = 2; i <= num;++i) {
+			
+			init = init.multiply(BigInteger.valueOf(i));
+			
+		}
+				
+		return init;
+	}
 
 }

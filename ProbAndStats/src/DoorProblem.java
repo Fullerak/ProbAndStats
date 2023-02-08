@@ -84,6 +84,7 @@ public class DoorProblem {
 	}
 	
 	public double montyProblemSwitch() {
+		
 		double count = 0;
 		double maximum = 10000;
 		

@@ -21,7 +21,6 @@ public class StatsLibraryTester {
 		System.out.println("-----------------------------------------------");
 
 		
-		
 	}
 
 }
