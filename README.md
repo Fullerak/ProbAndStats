@@ -2,7 +2,7 @@ This is a readme explaining the structure of my github submission for Project 1,
 
 The file structure is as follows:
 
-Programming:
+ProbandStats:
 
 	-StatsLibrary, which includes mean, median, mode, standard deviation, union, intersection, complement, factorial, permutation, combination, binomial distribution, geometric distribution
 	
