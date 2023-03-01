@@ -7,9 +7,7 @@ public class PeopleTester {
 		People test = new People();
 		
 		
-		System.out.println(test.birthday(5,10000)+"%");
-		
-		System.out.println(test.birthdayTest(200));
+		System.out.println(test.birthday(23,10000)+"%");
 
 	}
 }

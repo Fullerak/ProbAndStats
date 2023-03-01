@@ -12,7 +12,7 @@ public class People {
 	public int rand() {
 		
 		Random rand = new Random();
-		int randomDay = rand.nextInt(366);
+		int randomDay = rand.nextInt(365);
 		return randomDay;
 		
 	}
@@ -28,6 +28,7 @@ public class People {
 		
 		//looping through the amount of trials
 		for(int i = 0;i<trials;i++) {
+			//System.out.println(i);
 			//assigning the b day to true/false if theres a match
 			boolean val = test.birthdayTest(countPeople);
 			//test
@@ -38,6 +39,7 @@ public class People {
 			}
 			
 		}
+		//System.out.println(count);
 		//getting the percentage
 		double ans = count/trials * 100;
 		
@@ -55,12 +57,10 @@ public class People {
 		
 			//creates as many random b days as specified in the parameters in a forloop
 			for(int i =0;i<people;i++) {
-				//creating a random date
-				int randBirthday = rand();
 				//adding it to the list
-				list.add(randBirthday);
+				list.add(rand());
 			}
-		
+			//System.out.print(list);
 			//now we have to compare each birthday to see if a single one matches
 			for (int i = 0; i < list.size()-1;i++) {
 				for (int j = i+1; j < list.size();j++) {
