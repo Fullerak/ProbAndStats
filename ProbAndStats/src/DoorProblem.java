@@ -180,7 +180,7 @@ public class DoorProblem {
 		}
 		
 		}
-		//dividing the count by maximum trials and multiplying by 100 to get the percents
+		//dividing the count by maximum trials and multiplying by 100 to get the percent
 		double done = count/maximum * 100;
 		return done;
 
