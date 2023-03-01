@@ -4,7 +4,7 @@ The file structure is as follows:
 
 Programming:
 
-	-StatsLibrary, which includes mean, median, mode, standard deviation, union, intersection, complement, factorial, permutation, combination, binomial distribution,  geometric distribution
+	-StatsLibrary, which includes mean, median, mode, standard deviation, union, intersection, complement, factorial, permutation, combination, binomial distribution, geometric distribution
 	
 	-DoorProblem, which is the monty hall problem
 	
