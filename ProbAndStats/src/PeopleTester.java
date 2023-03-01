@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class PeopleTester {
 
@@ -5,8 +6,10 @@ public class PeopleTester {
 		
 		People test = new People();
 		
-		//System.out.println(test.birthday(1,2));
+		
+		System.out.println(test.birthday(5,10000)+"%");
+		
+		System.out.println(test.birthdayTest(200));
 
 	}
-
 }

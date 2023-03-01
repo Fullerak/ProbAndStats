@@ -20,6 +20,7 @@ public class StatsLibraryTester {
 		System.out.println("  Standard Deviation  |  " + test.findStandardDeviation(arr));
 		System.out.println("-----------------------------------------------");
 
+		//System.out.println(test.combination(6, 3));
 		
 	}
 

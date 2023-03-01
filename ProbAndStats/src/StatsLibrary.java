@@ -181,5 +181,53 @@ public class StatsLibrary {
 				
 		return init;
 	}
+	
+	//permutation method
+	public BigInteger permutation(int n, int r) {
+		//creating statsLib so I can call the fact method
+		StatsLibrary test = new StatsLibrary();
+		
+		//assigning the numerator to n!
+		BigInteger numerator = test.factorial(n);
+		
+		//subtracting n - r first to get var x
+		int x = n - r;
+		
+		//assigning the denom to (n-r)!
+		BigInteger denominator = test.factorial(x);
+		
+		//dividing the two to get the ans
+		BigInteger ans = numerator.divide(denominator);
+		
+		//returning the answer
+		return ans;
+		
+	}
+	
+	public BigInteger combination(int n, int r) {
+		//creating statsLib so I can call the fact method
+		StatsLibrary test = new StatsLibrary();
+		
+		//assigning the numerator to n!
+		BigInteger numerator = test.factorial(n);
+		
+		//subtracting n - r first to get x
+		int x = n - r;
+		
+		//getting the fact of x
+		BigInteger xFact = test.factorial(x);
+		
+		//assigning r factorial in the denom
+		BigInteger rFact = test.factorial(r);
+		
+		//multiply rFact * xFact to get the denom
+		BigInteger denominator = rFact.multiply(xFact);
+		
+		//dividing the numerator and denominator for ans
+		BigInteger ans = numerator.divide(denominator);
+		
+		//returning the answer
+		return ans;
+	}
 
 }
