@@ -1,9 +1,9 @@
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 //software design pattern (iterator is one of them)
 public class StatsLibrary {
-	//idk why i made this i hope i use it later	
 	
 	
 	//Default constructor
@@ -34,9 +34,9 @@ public class StatsLibrary {
 		//after we sort it then we can add an if else statement to check if its even or odd
 		
 		//middle of the array {1, 2, 3, 4, 5}
-		double middle = (array.length / 2);
+		double middle = array[(array.length / 2)];
 		//the other middle {1, 2, 3, 4}
-		double otherMiddle = (array.length / 2) - 1;
+		double otherMiddle = array[(array.length / 2) - 1];
 		
 		//checking if it is even
 		if(array.length % 2 == 0){
@@ -49,29 +49,31 @@ public class StatsLibrary {
 		}
 		
 	}
-	
+
 	//method to get the mode
-	public double findMode(double[] array) {
+	public Double findMode(double[] array) {
 		//to find the mode we just need to find the number or item that occurs the most
 		//what im thinking is having two variables, one that is essentially the # itself
 		//and the other one is the amount of times it occurs, and im going to compare it
 		//to the next item # and if the count is less ill keep it if its more ill swap it
 		//https://www.tutorialspoint.com/Java-program-to-calculate-mode-in-Java
-	      int maxValue = 0, maxCount = 0, i, j;
-	      int n = array.length;
+		//return type to Double not double and then do an if else loop to check if theres 2 maxvalues
+		//putting this here for later to be able to set a parameter to null
+	    double maxValue = 0, maxCount = 0, i, j;
+	    double n = array.length;
 	      
-	      for (i = 0; i < n; ++i) {
-	         int count = 0;
-	         for (j = 0; j < n; ++j) {
-	            if (array[j] == array[i])
-	            ++count;
-	         }
+	    	for (i = 0; i < n; ++i) {
+	    		int count = 0;
+	    		for (j = 0; j < n; ++j) {
+	    			if (array[(int) j] == array[(int) i])
+	    				++count;
+	    		}
 
-	         if (count > maxCount) {
-	            maxCount = count;
-	            maxValue = (int) array[i];
-	         }
-	      }
+	    		if (count > maxCount) {
+	    			maxCount = count;
+	    			maxValue = array[(int) i];
+	    		}
+	    	}
 	      return maxValue;
 		
 	}
@@ -97,6 +99,7 @@ public class StatsLibrary {
 		
 		return standardDeviation;
 	}
+	
 	
 	//method to find the union of two arraylists
 	//essentially combines both sets and eliminates duplicates
@@ -166,7 +169,65 @@ public class StatsLibrary {
 		return complementArr;
 	}
 	
+	public BigInteger factorial(int num) {
+		
+		BigInteger init = new BigInteger("1");
+		
+		for (int i = 2; i <= num;++i) {
+			
+			init = init.multiply(BigInteger.valueOf(i));
+			
+		}
+				
+		return init;
+	}
 	
+	//permutation method
+	public BigInteger permutation(int n, int r) {
+		//creating statsLib so I can call the fact method
+		StatsLibrary test = new StatsLibrary();
+		
+		//assigning the numerator to n!
+		BigInteger numerator = test.factorial(n);
+		
+		//subtracting n - r first to get var x
+		int x = n - r;
+		
+		//assigning the denom to (n-r)!
+		BigInteger denominator = test.factorial(x);
+		
+		//dividing the two to get the ans
+		BigInteger ans = numerator.divide(denominator);
+		
+		//returning the answer
+		return ans;
+		
+	}
 	
+	public BigInteger combination(int n, int r) {
+		//creating statsLib so I can call the fact method
+		StatsLibrary test = new StatsLibrary();
+		
+		//assigning the numerator to n!
+		BigInteger numerator = test.factorial(n);
+		
+		//subtracting n - r first to get x
+		int x = n - r;
+		
+		//getting the fact of x
+		BigInteger xFact = test.factorial(x);
+		
+		//assigning r factorial in the denom
+		BigInteger rFact = test.factorial(r);
+		
+		//multiply rFact * xFact to get the denom
+		BigInteger denominator = rFact.multiply(xFact);
+		
+		//dividing the numerator and denominator for ans
+		BigInteger ans = numerator.divide(denominator);
+		
+		//returning the answer
+		return ans;
+	}
 
 }
