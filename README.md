@@ -12,7 +12,7 @@ ProbandStats:
 
 Excel:
 
-	-Histogram from beggining of semester
+	-Histogram from beginning of semester
 	
 	-Histogram and solve of binomial/geometric distribution
 
