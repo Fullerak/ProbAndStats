@@ -2,8 +2,10 @@ This is a readme explaining the structure of my github submission for Project 1,
 
 The file structure is as follows:
 
-ProbandStats:
+ProbAndStats:
 
+	(Inside of the ProbAndStats folder, I will include a folder for screenshots of each program running with output)
+	
 	-StatsLibrary, which includes mean, median, mode, standard deviation, union, intersection, complement, factorial, permutation, combination, binomial distribution, geometric distribution
 	
 	-DoorProblem, which is the monty hall problem
