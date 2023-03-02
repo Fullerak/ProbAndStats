@@ -3,10 +3,19 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * this is the stats library class where i am including all of my useful equations to
+ * solve my homework
+ * @author Kaden
+ *
+ */
 //software design pattern (iterator is one of them)
 public class StatsLibrary {
 	
 
+	/**
+	 * this is the defualt constructor
+	 */
 	//Default constructor
 	public StatsLibrary() {
 		
@@ -14,8 +23,10 @@ public class StatsLibrary {
 	}
 	
 	/**
+	 * this is a method to compute the mean by adding all the nums in the array and dividing
+	 * by the count of the array
 	 * 
-	 * @param array
+	 * @param array the array we are finding the mean of this array we pass in
 	 * @return
 	 */
 	//Method to get the mean
@@ -34,8 +45,10 @@ public class StatsLibrary {
 	}
 	
 	/**
+	 * this method finds the median by sorting the array and going to the middle if it is odd
+	 * if it is even then it adds the two middle numbers and divides by 2
 	 * 
-	 * @param array
+	 * @param array an array to find the median in
 	 * @return
 	 */
 	//method to get the median
@@ -62,8 +75,9 @@ public class StatsLibrary {
 	}
 
 	/**
+	 * this method finds the mode and accounts for the edge case if there are two of the same modes
 	 * 
-	 * @param array
+	 * @param array the array to find the mode on
 	 * @return
 	 */
 	//method to get the mode
@@ -93,8 +107,9 @@ public class StatsLibrary {
 	}
 	
 	/**
+	 * this method computes the standard deviation
 	 * 
-	 * @param array
+	 * @param array the array to do the standard deviation on
 	 * @return
 	 */
 	//method to find the standard deviation
@@ -120,9 +135,10 @@ public class StatsLibrary {
 	}
 	
 	/**
+	 * we are finding the union of both set A and B by combining the sets and then eliminating the duplicates
 	 * 
-	 * @param arrayOne
-	 * @param arrayTwo
+	 * @param arrayOne the first array A
+	 * @param arrayTwo the second array B
 	 * @return
 	 */
 	//method to find the union of two arraylists
@@ -153,9 +169,11 @@ public class StatsLibrary {
 		
 	}
 	/**
+	 * this method finds the intersection of two methods which is if an element occurs in both sets it goes 
+	 * to the final set
 	 * 
-	 * @param arrayOne
-	 * @param arrayTwo
+	 * @param arrayOne array A which we are finding the intersection of
+	 * @param arrayTwo array B which we are finding the intersection of
 	 * @return
 	 */
 	//method to find the intersection of two sets
@@ -177,10 +195,11 @@ public class StatsLibrary {
 	}
 		
 	/**
+	 * this method finds the complement of a set compared to a sample space
 	 * 
-	 * @param arrayOne
-	 * @param min
-	 * @param max
+	 * @param arrayOne this array is the smaller one which we are comparing to the sample space
+	 * @param min minimum of the sample space
+	 * @param max maxiumum of the sample space
 	 * @return
 	 */
 	public ArrayList<Integer> findComplement(ArrayList<Integer> arrayOne, int min, int max){
@@ -205,8 +224,9 @@ public class StatsLibrary {
 	}
 	
 	/**
+	 * this method computes the factorial of a given number
 	 * 
-	 * @param num
+	 * @param num the number we are computing the factorial of
 	 * @return
 	 */
 	public BigInteger factorial(int num) {
@@ -222,9 +242,10 @@ public class StatsLibrary {
 		return init;
 	}
 	/**
+	 * this method does the permutations (which are in order)
 	 * 
-	 * @param n
-	 * @param r
+	 * @param n the number of objects to choose from
+	 * @param r the number of objects we are choosing
 	 * @return
 	 */
 	//permutation method
@@ -249,9 +270,10 @@ public class StatsLibrary {
 		
 	}
 	/**
+	 * this method computes the combinations of n and r
 	 * 
-	 * @param n
-	 * @param r
+	 * @param n the number of objects to choose from
+	 * @param r the number of objects we are choosing
 	 * @return
 	 */
 	public BigInteger combination(int n, int r) {
@@ -281,9 +303,10 @@ public class StatsLibrary {
 	}
 	
 	/**
+	 * this method computes the geometric distribution
 	 * 
-	 * @param p
-	 * @param y
+	 * @param p probability of the event occurring
+	 * @param y number of trials up to and including the first success
 	 * @return
 	 */
 	public double geometric(double p, double y) {
@@ -299,7 +322,15 @@ public class StatsLibrary {
 		return res;
 	}
 	
-	public BigInteger binomial(int n, int p, int y) {
+	/**
+	 * this method computes the binomial distribution
+	 * 
+	 * @param n the number of trials
+	 * @param p the probability of the event occurring
+	 * @param y the amount of correct answers in the set trials you are going for
+	 * @return
+	 */
+	public BigInteger binomial(int n, double p, int y) {
 		
 		StatsLibrary test = new StatsLibrary();
 		
@@ -319,5 +350,48 @@ public class StatsLibrary {
 		BigInteger outter = inner.multiply(comb);
 		
 		return outter;
+	}
+	/**
+	 * this method tests all my methods in the stats library and prints them
+	 */
+	public void returnResult() {
+		//making my array for mean, median, mode, and standard deviation
+		double[] arr = {1.0, 3.6, 4.1, 9.3, 1.0, 4.1, 4.1};
+		
+		//making my array list
+		ArrayList<Integer> array = new ArrayList<Integer>();
+		array.add(1);
+		array.add(3);
+		array.add(4);
+		array.add(9);
+		array.add(1);
+		array.add(10);
+		array.add(5);
+		
+		//making my array list
+		ArrayList<Integer> arrayTwo = new ArrayList<Integer>();
+		arrayTwo.add(7);
+		arrayTwo.add(11);
+		arrayTwo.add(15);
+		arrayTwo.add(9);
+		arrayTwo.add(1);
+		arrayTwo.add(6);
+		arrayTwo.add(5);
+		
+		//creating an instance of StatsLibrary
+		StatsLibrary test = new StatsLibrary();
+		
+		System.out.println("  Mean                            |  " + test.findMean(arr));
+		System.out.println("  Median                          |  " + test.findMedian(arr));
+		System.out.println("  Mode                            |  " + test.findMode(array));
+		System.out.println("  Standard Deviation              |  " + test.findStandardDeviation(arr));
+		System.out.println("  Union                           |  " + test.findUnion(array, arrayTwo));
+		System.out.println("  Intersection                    |  " + test.findIntersection(array, arrayTwo));
+		System.out.println("  Complement                      |  " + test.findComplement(array, 1, 20));
+		System.out.println("  Factorial of 6                  |  " + test.factorial(6));
+		System.out.println("  Combinations with n = 6, r = 3  |  " +test.combination(6, 3));
+		System.out.println("  Permutations with n = 6, r = 3  |  " +test.permutation(6, 3));
+		System.out.println("  Geometric Distribution for 3    |  " +test.geometric(.1,3));
+		System.out.println("  The Binomail for trial 8        |  " +test.binomial(15,.5,8));
 	}
 }
