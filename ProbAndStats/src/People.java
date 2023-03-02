@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
 /**
+ * class to demonstrate the birthday problem where what are the chances
+ * someone in your class has the same birthday as you
  * 
  * @author Kaden
  *

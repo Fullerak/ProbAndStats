@@ -2,17 +2,45 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+/**
+ * class to demonstrate the Monty hall problem from class, without switching doors
+ * and with door switching
+ * @author Kaden
+ *
+ */
 public class DoorProblem {
 
+	/**
+	 * default constructor for DoorProblem
+	 */
 	//default constructor
 	public DoorProblem() {
 	}
 	
+	/**
+	 * random number generator to populate empty and prize doors by index later on
+	 * 
+	 * @param min the minimum number it can be which is 0
+	 * @param max the maxiumum number it can be which is 1
+	 * @return returns a random 0 or 1
+	 */
 	//random number generator for the 0s and 1s
 	public int rand(int min, int max) {
 		return new Random().nextInt(max - min + 1) + min;
 	}
 	
+	/**
+	 * in this method i am creating two random arraylist of size 2 (0,1,2) where i 
+	 * am populating them with 3 0's to begin, so both look like [0,0,0]. After 
+	 * i am placing a 1 inside of a random index from 0-2 using the random num generator 
+	 * from earlier in both arraylists. then i compare both lists and see if they have the 
+	 * right door chosen or not, if they do it adds +1 to count, if not nothing happens. When
+	 * it loops through the set amount of trials it will return the percentage of times people
+	 * chose the right door
+	 * 
+	 * 
+	 * @return returns the % of times people choose the right door
+	 */
 	//constructor for the no switch monty problem
 	public double montyProblem() {
 		//making a count variable for the amount of times they win
@@ -78,7 +106,16 @@ public class DoorProblem {
 		return done;
 			
 	}
-	
+	/**
+	 * this method acts the same as the montyProblem except once it creates the
+	 * two arraylists with a random 1 somewhere, it removes the alike 0 
+	 * ([001] and [010] both have a 0 at index 0 so it 'reveals' that door).
+	 * once a door is revealed it then switches the second list answer to the 
+	 * other index then it will compare if they are equal to the first one or not.
+	 * if it is it adds to count, if not nothing happens
+	 * 
+	 * @return returns the winning percent if someone switches their door after a door revealed
+	 */
 	//constructor for the monty hall problem with a door revealed and switch
 	public double montyProblemSwitch() {
 		
@@ -184,6 +221,15 @@ public class DoorProblem {
 		double done = count/maximum * 100;
 		return done;
 
+	}
+	
+	/**
+	 * this method prints my 2 trials to check for no switch and a switch of the door
+	 */
+	public void returnResult() {
+		DoorProblem test = new DoorProblem();
+		System.out.println("The probability of you winning if you don't change your door is:     " + test.montyProblem() + "%");
+		System.out.println("The probability of you winning if you cahnge your door is:           " + test.montyProblemSwitch() + "%");
 	}
 	
 	
