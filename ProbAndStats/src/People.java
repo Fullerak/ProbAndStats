@@ -11,9 +11,15 @@ public class People {
 	
 	public int rand() {
 		
-		Random rand = new Random();
+		/*Random rand = new Random();
 		int randomDay = rand.nextInt(365);
-		return randomDay;
+		return randomDay;*/
+		
+		Random rand = new Random();
+		int low = 1;
+		int high = 366;
+		int result = rand.nextInt(high-low) + low;
+		return result;
 		
 	}
 	
@@ -43,6 +49,7 @@ public class People {
 		//getting the percentage
 		double ans = count/trials * 100;
 		
+		
 		return ans;
 		
 	}
@@ -58,14 +65,15 @@ public class People {
 			//creates as many random b days as specified in the parameters in a forloop
 			for(int i =0;i<people;i++) {
 				//adding it to the list
-				list.add(rand());
+				list.add((Integer) rand());
 			}
 			//System.out.print(list);
 			//now we have to compare each birthday to see if a single one matches
-			for (int i = 0; i < list.size()-1;i++) {
+			for (int i = 0; i < list.size();i++) {
 				for (int j = i+1; j < list.size();j++) {
 					//System.out.println(list.get(i)+","+list.get(j));
-					if (list.get(i) == list.get(j)) {
+					if (list.get(i).equals(list.get(j))) {
+						//System.out.println("true");
 						return true;
 					}
 				}

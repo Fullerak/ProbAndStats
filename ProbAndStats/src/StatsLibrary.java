@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -5,13 +6,18 @@ import java.util.Arrays;
 //software design pattern (iterator is one of them)
 public class StatsLibrary {
 	
-	
+
 	//Default constructor
 	public StatsLibrary() {
 		
 		
 	}
 	
+	/**
+	 * 
+	 * @param array
+	 * @return
+	 */
 	//Method to get the mean
 	public double findMean(double[] array) {
 		double sum = 0;
@@ -27,6 +33,11 @@ public class StatsLibrary {
 		
 	}
 	
+	/**
+	 * 
+	 * @param array
+	 * @return
+	 */
 	//method to get the median
 	public double findMedian(double[] array) {
 		//to find the median first we need to sort the array
@@ -50,34 +61,42 @@ public class StatsLibrary {
 		
 	}
 
+	/**
+	 * 
+	 * @param array
+	 * @return
+	 */
 	//method to get the mode
-	public Double findMode(double[] array) {
-		//to find the mode we just need to find the number or item that occurs the most
-		//what im thinking is having two variables, one that is essentially the # itself
-		//and the other one is the amount of times it occurs, and im going to compare it
-		//to the next item # and if the count is less ill keep it if its more ill swap it
+	public Integer findMode(ArrayList<Integer> array) {
 		//https://www.tutorialspoint.com/Java-program-to-calculate-mode-in-Java
-		//return type to Double not double and then do an if else loop to check if theres 2 maxvalues
-		//putting this here for later to be able to set a parameter to null
-	    double maxValue = 0, maxCount = 0, i, j;
-	    double n = array.length;
+	    Integer res = 0;
+	    int maxCount = 0,i,j;
+	    double n = array.size();
 	      
 	    	for (i = 0; i < n; ++i) {
 	    		int count = 0;
 	    		for (j = 0; j < n; ++j) {
-	    			if (array[(int) j] == array[(int) i])
+	    			if (array.get(i) == array.get(j))
 	    				++count;
 	    		}
 
 	    		if (count > maxCount) {
 	    			maxCount = count;
-	    			maxValue = array[(int) i];
+	    			res = array.get(i);
+	    		}
+	    		else if (count == maxCount & array.get(i) != res) {
+	    			res = null;
 	    		}
 	    	}
-	      return maxValue;
+	      return res;
 		
 	}
 	
+	/**
+	 * 
+	 * @param array
+	 * @return
+	 */
 	//method to find the standard deviation
 	public double findStandardDeviation(double[] array) {
 		//creating an instance of the class so i can use mean instead of doing a new one in here
@@ -100,7 +119,12 @@ public class StatsLibrary {
 		return standardDeviation;
 	}
 	
-	
+	/**
+	 * 
+	 * @param arrayOne
+	 * @param arrayTwo
+	 * @return
+	 */
 	//method to find the union of two arraylists
 	//essentially combines both sets and eliminates duplicates
 	public ArrayList<Integer> findUnion(ArrayList<Integer> arrayOne, ArrayList<Integer> arrayTwo) {
@@ -128,7 +152,12 @@ public class StatsLibrary {
 		return unionFinal;
 		
 	}
-	
+	/**
+	 * 
+	 * @param arrayOne
+	 * @param arrayTwo
+	 * @return
+	 */
 	//method to find the intersection of two sets
 	//essentially only if the item appears in both sets we can add it to the final set
 	public ArrayList<Integer> findIntersection(ArrayList<Integer> arrayOne, ArrayList<Integer> arrayTwo){
@@ -147,7 +176,13 @@ public class StatsLibrary {
 		
 	}
 		
-	
+	/**
+	 * 
+	 * @param arrayOne
+	 * @param min
+	 * @param max
+	 * @return
+	 */
 	public ArrayList<Integer> findComplement(ArrayList<Integer> arrayOne, int min, int max){
 		
 		//complement is a new arraylist of numbers that are present in the universal set but not in A
@@ -169,6 +204,11 @@ public class StatsLibrary {
 		return complementArr;
 	}
 	
+	/**
+	 * 
+	 * @param num
+	 * @return
+	 */
 	public BigInteger factorial(int num) {
 		
 		BigInteger init = new BigInteger("1");
@@ -181,7 +221,12 @@ public class StatsLibrary {
 				
 		return init;
 	}
-	
+	/**
+	 * 
+	 * @param n
+	 * @param r
+	 * @return
+	 */
 	//permutation method
 	public BigInteger permutation(int n, int r) {
 		//creating statsLib so I can call the fact method
@@ -203,7 +248,12 @@ public class StatsLibrary {
 		return ans;
 		
 	}
-	
+	/**
+	 * 
+	 * @param n
+	 * @param r
+	 * @return
+	 */
 	public BigInteger combination(int n, int r) {
 		//creating statsLib so I can call the fact method
 		StatsLibrary test = new StatsLibrary();
@@ -229,5 +279,45 @@ public class StatsLibrary {
 		//returning the answer
 		return ans;
 	}
-
+	
+	/**
+	 * 
+	 * @param p
+	 * @param y
+	 * @return
+	 */
+	public double geometric(double p, double y) {
+		
+		double power = y - 1;
+		
+		double ins = 1 - p;
+		
+		double mult = Math.pow(ins,power);
+		
+		double res = mult * p;
+		
+		return res;
+	}
+	
+	public BigInteger binomial(int n, int p, int y) {
+		
+		StatsLibrary test = new StatsLibrary();
+		
+		//combinations
+		BigInteger comb = test.combination(n, y);
+		
+		//p^y math
+		double py = Math.pow(p,y);
+		BigInteger pyBig = BigDecimal.valueOf(py).toBigInteger();
+		
+		//(1-p)^n-y
+		double ins = Math.pow(1-p, n-y);
+		BigInteger insBig = BigDecimal.valueOf(ins).toBigInteger();
+		
+		BigInteger inner = pyBig.multiply(insBig);
+		
+		BigInteger outter = inner.multiply(comb);
+		
+		return outter;
+	}
 }
