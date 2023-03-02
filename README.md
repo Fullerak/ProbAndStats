@@ -8,7 +8,8 @@ ExcelFiles:
 	
 ExtraCredit:
 
-	ExtraCreditConsideration.docx: this is just the extra credit considerations I believed were extra effor to make it more professional
+	ExtraCreditConsideration.docx: this is just the extra credit considerations I believed were extra effor to make it more 
+	professional
 	
 ProbAndStats:
 
@@ -20,7 +21,8 @@ ProbAndStats:
 		
 		DoorProblemTester.java: the tester for the door problem class which just calls a return results method
 		
-		People.java: a class that has the birthday method to make people with random birthdays and test if they have the same one as someone in their group
+		People.java: a class that has the birthday method to make people with random birthdays and test if they have the same 
+		one as someone in their group
 		
 		PeopleTester.java: the tester for the people class which just calls a return results method
 		
